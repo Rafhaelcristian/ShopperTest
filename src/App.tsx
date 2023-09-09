@@ -4,11 +4,13 @@ import "react-toastify/dist/ReactToastify.css";
 import FileUploadForm from "./components/fileUpload";
 import ResponseProducts from "./components/responseProducts";
 import { useProductContext } from "./context/index";
+import { GlobalStyles } from "./styles/global";
 
 function App() {
   const { loading, products } = useProductContext();
   return (
     <div>
+      <GlobalStyles />
       {loading ? <p>Carregando...</p> : <FileUploadForm />}
       {products ? <ResponseProducts /> : null}
       <ToastContainer

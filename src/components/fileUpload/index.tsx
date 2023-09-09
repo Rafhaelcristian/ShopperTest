@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useProductContext } from "../../context/index";
+import { StyledForm } from "./styles";
 
 function FileUploadForm() {
   const { validateProducts } = useProductContext();
@@ -12,10 +13,10 @@ function FileUploadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <input type="file" accept=".csv" {...register("file")} />
       <button type="submit">Validar</button>
-    </form>
+    </StyledForm>
   );
 }
 
